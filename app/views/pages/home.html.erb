@@ -1,5 +1,9 @@
 <div class="jumbotron">
   <h1><i class="fa fa-circle-o-notch"></i> Superlist</h1>
   <p>A simple iDoneIt project management app for Superflare.<p>
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% if current_user %>
+  	TASKS
+  <% else %>
+  	<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
 </div>
