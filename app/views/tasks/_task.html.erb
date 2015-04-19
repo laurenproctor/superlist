@@ -6,8 +6,8 @@
     	<% end %><%= link_to "x", task_path(task), method: :delete, data: { confirm: "Are you sure?"}, class: "pull-right" %></h3>
 
   	</div>
-  	<div class="panel-body">
-    		<%= task.content %>
+  	<div class="panel-body"><%= raw(task.content_html) %>
+
 	</div>
 	<div class="panel-footer text-center">
 		<% if task.state == "doing" %>
@@ -20,5 +20,7 @@
 	<% else %>
 		<%= link_to "<i class='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, class: "btn btn-info btn-md btn-block" %>
   	<% end %>
+
+
 	</div>
 </div>
