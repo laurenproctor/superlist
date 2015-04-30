@@ -1,13 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
 
-<p>
-  <strong>Content:</strong>
-  <%= @task.content %>
-</p>
-<p>
-  <strong>State:</strong>
-  <%= @task.state %>
-</p>
+	<div class="panel panel-primary">
+		 <div class="panel-heading"><strong>Your Most Recent To Do</strong></div>
+		<div class="panel-body">
+  			<%= @task.content %>
+		 </div>
+		<div class="panel-footer text-center">
+			<div class="btn-group btn-group-justified">
+			<%= link_to "Edit Task".html_safe, edit_task_path, method: :get, class: "btn btn-info btn-md btn-block" %>
+  			<%= link_to "Back to Task Board".html_safe, tasks_path, method: :get, class: "btn btn-info btn-md btn-block" %>
+			</div>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+		</div>
+	</div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
